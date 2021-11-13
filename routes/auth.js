@@ -12,6 +12,9 @@ const { emailUpdateController } = require("../controller/emailUpdate");
 const { userPassController } = require("../controller/passUpdate");
 const { phoneUpdateController } = require("../controller/phoneUpdate");
 const { resendOtp } = require("../controller/resendOtp");
+const { mapsController } = require("../controller/mapsController");
+const { adminLoginController } = require("../controller/adminLogin");
+const { adminDashBoardController } = require("../controller/adminDashBoard");
 
 // <-----------------------------------------------Import Middlewares----------------------------------------------->
 
@@ -33,8 +36,14 @@ router.post("/verify-otp", addOtpVerifiy);
 // FOR USER LOGIN
 router.post("/login", loginController);
 
+// For ADMIN LOGIN
+router.post("/login/admin", adminLoginController);
+
 // FOR USER DASHBOARD
 router.get("/dashboard", addTokenVerification, dashBoardController);
+
+// FOR ADMIN DASHBOARD
+router.get("/dashboard/admin", adminDashBoardController);
 
 // FOR USER PROFILE UPDATE
 router.post("/profile-update", addTokenVerification, profileUpController);
@@ -65,5 +74,8 @@ router.post("/resent-otp", resendOtp);
 
 // FOR USER LOGOUT
 router.get("/logout", logoutController);
+
+// FOR MAPS API
+router.get("/maps", mapsController);
 
 module.exports = router;

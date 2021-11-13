@@ -15,6 +15,7 @@ const messageBox = {
   logoutMess: "User Logout successfully...",
   updateData: "User Data updateted",
   passUpdate: "Password updateted Successfully",
+  DATA_STORE: "Data stored successfully",
 };
 
 module.exports = { messageBox };

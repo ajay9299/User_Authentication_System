@@ -10,6 +10,7 @@ const userAuthJoi = joi
     email: joi.string().email(),
     phone: joi.string().max(10).min(10),
     password: joi.string().required(),
+    role: joi.string().required(),
   })
   .or("email", "phone")
   .without("email", "phone")

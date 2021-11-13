@@ -84,6 +84,7 @@ const registerController = async (req, res) => {
         depName: req.body.depName,
         country: req.body.country,
         phone: Number(req.body.phone),
+        role: req.body.role,
         password: hashedPassword,
       });
 
@@ -122,6 +123,7 @@ const registerController = async (req, res) => {
         country: req.body.country,
         email: req.body.email.toLowerCase(),
         password: hashedPassword,
+        role: req.body.role,
         emailToken: crypto.randomBytes(64).toString("hex"),
       });
 
